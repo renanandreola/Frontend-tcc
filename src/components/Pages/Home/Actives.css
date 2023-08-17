@@ -54,7 +54,7 @@
   
   .ups {
     display: flex;
-    width: 30%;
+    /* width: 30%; */
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;
@@ -63,7 +63,7 @@
   
   .downs {
     display: flex;
-    width: 30%;
+    /* width: 30%; */
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;

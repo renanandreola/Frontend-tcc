@@ -1,5 +1,6 @@
 import React from 'react';
 import ActivesInitial from './Actives';
+import WidgetTradingView from './WidgetTradingView';
 // import Card from './components/layout/Card';
 
 // import Primeiro from './components/basicos/Primeiro';
@@ -20,8 +21,9 @@ import ActivesInitial from './Actives';
 function Home() {
 
   return(
-    <div className="Cards">
+    <div className="Home-general">
 
+        <WidgetTradingView></WidgetTradingView>
         <ActivesInitial></ActivesInitial>
 
         {/* <Card title="Contador" color="gray">

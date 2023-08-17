@@ -1,0 +1,11 @@
+.tradingview-widget-container {
+    width: 100%!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tradingview-widget-copyright {
+    display: none;
+}

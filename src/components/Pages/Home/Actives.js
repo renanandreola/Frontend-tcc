@@ -7,6 +7,8 @@ function ActivesInitial() {
 
   useEffect(() => {
     fetchData();
+    // const intervalId = setInterval(fetchData, 4000);
+    // return () => clearInterval(intervalId);
   }, []);
 
   async function fetchData() {
