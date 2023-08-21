@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import ActionWidgetTradingView from './ActionWidgetTradingView';
+import Header from '../../layout/Header';
 
 export default (props) => {
     const location = useLocation();
@@ -14,11 +15,16 @@ export default (props) => {
     }
 
     return (
+        <>
+        <Header></Header>
+        
         <div>
             <h1>Página de Ativo</h1>
             <p>Ativo: {name}</p>
             <p>Código: {code}</p>
             <ActionWidgetTradingView code={code} name={name}></ActionWidgetTradingView>
         </div>
+        </>
+
     );
 };

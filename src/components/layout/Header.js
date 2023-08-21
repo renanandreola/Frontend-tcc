@@ -1,18 +1,15 @@
 import './Header.css'
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+    const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
   
     const makeSearch = () => {
         console.log(searchTerm);
-      // Realiza a busca com base no searchTerm
-
-      // ...
-  
-      // Redireciona para a página de resultados com o critério de busca como parâmetro
-    //   history.push(`/results?search=${searchTerm}`);
+        navigate('/searchResults', { state: { searchTerm: searchTerm } });
     };
 
     return (

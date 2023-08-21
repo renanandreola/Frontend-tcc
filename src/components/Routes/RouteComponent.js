@@ -5,6 +5,7 @@ import About from '../Pages/About/About';
 import Register from '../Pages/Register/Register';
 import ListActions from '../Pages/ListActions/ListActions'
 import Action from '../Pages/Action/Action';
+import SearchResults from '../Pages/SearchResults/SearchResults';
 
 function RouteComponent() {
   return (
@@ -15,6 +16,7 @@ function RouteComponent() {
         <Route path="/register" element={<Register />} />
         <Route path="/actions" element={<ListActions />} />
         <Route path="/action" element={<Action />} />
+        <Route path="/searchResults" element={<SearchResults />} />
       </Routes>
     </BrowserRouter>
   );

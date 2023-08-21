@@ -1,6 +1,7 @@
 import './Register.css'
 import React, {useState} from "react";
 import axios from 'axios';
+import Header from '../../layout/Header';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -93,6 +94,8 @@ function Register() {
 
   return (
     <>
+      <Header></Header>
+      
       <h1>Crie sua conta</h1>
       <form onSubmit={createAccount}>
         <div className="register-infos">

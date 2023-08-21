@@ -4,12 +4,11 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import actions from '../../../data/actionsB3';
 import { useNavigate } from 'react-router-dom';
+import Header from '../../layout/Header';
 
 export default (props) => {
     const navigate = useNavigate();
     const [data, setData] = useState([]);
-
-    const teste = "funciona porra"
 
     useEffect(() => {
       fetchData();
@@ -32,6 +31,8 @@ export default (props) => {
     if (data.length > 0) {
         return (
             <>
+            <Header></Header>
+
             <h1>Ações cadastradas na B3</h1>
             <div style={{display: 'flex', justifyContent: 'center'}}>
                 <table className="table table-striped">
@@ -62,7 +63,11 @@ export default (props) => {
         )
     } else {
         return (
+            <>
+            <Header></Header>
+
             <h3>Carregando ações...</h3>
+            </>
         )
     }
 

@@ -1,28 +1,13 @@
 import React from 'react';
 import ActivesInitial from './Actives';
 import WidgetTradingView from './WidgetTradingView';
-// import Card from './components/layout/Card';
-
-// import Primeiro from './components/basicos/Primeiro';
-// import ComParametro from './components/basicos/ComParametro';
-// import Fragment from './components/basicos/Fragment';
-// import Aleatorio from './components/basicos/Aleatorio';
-// import Familia from './components/basicos/Familia';
-// import FamiliaMembro from './components/basicos/FamiliaMembro';
-// import ListaAlunos from './components/repeticao/ListaAlunos';
-// import Produtos from './components/repeticao/Produtos';
-// import ParOuImpar from './components/condicional/ParOuImpar';
-// import UsuarioInfo from './components/condicional/UsuarioInfo';
-// import DiretaPai from './components/comunicacao/DiretaPai';
-// import IndiretaPai from './components/comunicacao/IndiretaPai';
-// import Input from './components/formulario/Input';
-// import Contador from './components/contador/Contador';
+import Header from '../../layout/Header';
 
 function Home() {
 
   return(
     <div className="Home-general">
-
+        <Header></Header>
         <WidgetTradingView></WidgetTradingView>
         <ActivesInitial></ActivesInitial>
 
