@@ -1,7 +1,7 @@
-import "./ActionWidgetTradingView.css"
+import "./GraphTicker.css"
 import React, { useEffect, useRef, memo } from 'react';
 
-function ActionTradingViewWidget(props) {
+function GraphTicker(props) {
   console.log("props :: ", props);
   const container = useRef();
 
@@ -65,4 +65,4 @@ function ActionTradingViewWidget(props) {
   );
 }
 
-export default memo(ActionTradingViewWidget);
+export default memo(GraphTicker);

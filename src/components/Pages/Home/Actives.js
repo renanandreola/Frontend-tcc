@@ -101,7 +101,7 @@ function ActivesInitial() {
         </div>
       )}
       <br></br>
-      <span><a href="/actions">Veja todas as ações da B3</a></span>
+      <span><a href="/tickers">Veja todas as ações da B3</a></span>
     </>
   );
 }

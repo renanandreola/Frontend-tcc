@@ -1,4 +1,4 @@
-import './ListActions.css'
+import './ListTickers.css'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -25,7 +25,7 @@ export default (props) => {
     }
 
     const goToAction = (code, name) => {
-        navigate('/action', { state: { code: code, name: name } });
+        navigate('/ticker', { state: { code: code, name: name } });
     };
 
     if (data.length > 0) {
@@ -52,7 +52,7 @@ export default (props) => {
                                 <td>{action.name}</td>
                                 {/* <td><a href='/'>Ver ativo</a></td> */}
                                 <td>
-                                    <button onClick={() => goToAction(action.code, action.name)}>Ver ativo</button>
+                                    <button className='btn btn-primary' onClick={() => goToAction(action.code, action.name)}>Ver ativo</button>
                                 </td>
                             </tr>
                         ))}

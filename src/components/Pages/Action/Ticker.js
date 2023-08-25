@@ -1,7 +1,9 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import ActionWidgetTradingView from './ActionWidgetTradingView';
+import GraphTicker from './GraphTicker';
+import HeaderTicker from './HeaderTicker';
 import Header from '../../layout/Header';
+import InfoTicker from './InfoTicker';
 
 export default (props) => {
     const location = useLocation();
@@ -17,12 +19,14 @@ export default (props) => {
     return (
         <>
         <Header></Header>
+        <HeaderTicker code={code} name={name}></HeaderTicker>
+        <InfoTicker code={code} name={name}></InfoTicker>
         
         <div>
-            <h1>Página de Ativo</h1>
+            {/* <h1>Página de Ativo</h1>
             <p>Ativo: {name}</p>
-            <p>Código: {code}</p>
-            <ActionWidgetTradingView code={code} name={name}></ActionWidgetTradingView>
+            <p>Código: {code}</p> */}
+            {/* <GraphTicker code={code} name={name}></GraphTicker> */}
         </div>
         </>
 

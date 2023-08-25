@@ -1,6 +1,7 @@
 body {
     /* background-color: rgb(180, 180, 180); */
-    font-family: Oswald;
+    /* font-family: Oswald; */
+    font-family: 'Trebuchet MS';
     /* color: white; */
     text-align: center;
 }
@@ -11,4 +12,8 @@ h1, h2, h3 {
 
 h2, h3 {
     margin: 0;
+}
+
+a {
+    color: black!important;
 }

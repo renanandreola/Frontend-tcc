@@ -31,15 +31,15 @@ function Header() {
                         <a className="nav-link" href="/register">Cadastro</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/actions">Ações</a>
+                        <a className="nav-link" href="/tickers">Ações</a>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <a className="nav-link" href="/action">Ativo</a>
-                    </li>
+                    </li> */}
                 </ul>
                 <div className="form-inline my-2 my-lg-0">
-                    <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="form-control mr-sm-2" type="search" placeholder="Busca" aria-label="Busca"></input>
-                    <button className="btn btn-outline-success my-2 my-sm-0" type="" onClick={makeSearch}>Pesquisar</button>
+                    <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="form-control mr-sm-2" type="search" placeholder="Busque pelo ativo" aria-label="Pesquisar"></input>
+                    <button className="btn btn-outline-primary my-2 my-sm-0" type="" onClick={makeSearch}>Pesquisar</button>
                 </div>
             </div>
         </nav>
