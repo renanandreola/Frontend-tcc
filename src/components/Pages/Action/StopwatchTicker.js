@@ -1,26 +1,26 @@
 import React, { useEffect, useRef, memo } from 'react';
-import "./InfoTicker.css"
+import "./StopwatchTicker.css"
 
-function InfoTicker(props) {
+function StopwatchTicker(props) {
   console.log("props :: ", props);
   const container = useRef();
 
   useEffect(
     () => {
       const script = document.createElement("script");
-      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-financials.js";
+      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js";
       script.type = "text/javascript";
       script.async = true;
       script.innerHTML = `
         {
-            "colorTheme": "dark",
+            "interval": "1m",
+            "width": "500",
             "isTransparent": true,
-            "largeChartUrl": "",
-            "displayMode": "regular",
-            "width": "1300",
-            "height": "800",
+            "height": "500",
             "symbol": "BMFBOVESPA:${props.code}",
-            "locale": "br"
+            "showIntervalTabs": true,
+            "locale": "br",
+            "colorTheme": "dark"
         }`;
       container.current.appendChild(script);
     },
@@ -28,10 +28,10 @@ function InfoTicker(props) {
   );
 
   return (
-    <div className="tradingview-widget-container info-ticker" ref={container}>
+    <div className="tradingview-widget-container" ref={container}>
       <div className="tradingview-widget-container__widget"></div>
     </div>
   );
 }
 
-export default InfoTicker;
+export default StopwatchTicker;

@@ -4,6 +4,8 @@ import GraphTicker from './GraphTicker';
 import HeaderTicker from './HeaderTicker';
 import Header from '../../layout/Header';
 import InfoTicker from './InfoTicker';
+import CompanyInfo from './CompanyInfo';
+import StopwatchTicker from './StopwatchTicker';
 
 export default (props) => {
     const location = useLocation();
@@ -20,13 +22,15 @@ export default (props) => {
         <>
         <Header></Header>
         <HeaderTicker code={code} name={name}></HeaderTicker>
+        <GraphTicker code={code} name={name}></GraphTicker>
         <InfoTicker code={code} name={name}></InfoTicker>
+        <StopwatchTicker code={code} name={name}></StopwatchTicker>
+        <CompanyInfo code={code} name={name}></CompanyInfo>
         
         <div>
             {/* <h1>Página de Ativo</h1>
             <p>Ativo: {name}</p>
             <p>Código: {code}</p> */}
-            {/* <GraphTicker code={code} name={name}></GraphTicker> */}
         </div>
         </>
 

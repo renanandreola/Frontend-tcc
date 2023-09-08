@@ -1,9 +1,10 @@
 body {
-    /* background-color: rgb(180, 180, 180); */
+    background-color: black;
     /* font-family: Oswald; */
     font-family: 'Trebuchet MS';
     /* color: white; */
     text-align: center;
+    color: white;
 }
 
 h1, h2, h3 {
@@ -15,5 +16,5 @@ h2, h3 {
 }
 
 a {
-    color: black!important;
+    color: white!important;
 }

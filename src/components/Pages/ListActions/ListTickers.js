@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import actions from '../../../data/actionsB3';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../layout/Header';
+import Card from '../../layout/Card';
 
 export default (props) => {
     const navigate = useNavigate();
@@ -31,34 +32,25 @@ export default (props) => {
     if (data.length > 0) {
         return (
             <>
-            <Header></Header>
+                <Header></Header>
 
-            <h1>Ações cadastradas na B3</h1>
-            <div style={{display: 'flex', justifyContent: 'center'}}>
-                <table className="table table-striped">
-                    <thead>
-                        <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Código</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Ação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data.map(action => (
-                            <tr key={action.code}>
-                                <th scope="row">-</th>
-                                <td>{action.code}</td>
-                                <td>{action.name}</td>
-                                {/* <td><a href='/'>Ver ativo</a></td> */}
-                                <td>
-                                    <button className='btn btn-primary' onClick={() => goToAction(action.code, action.name)}>Ver ativo</button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+                <h1>Ações cadastradas na B3</h1>
+            
+                <div className='listing-tickers'>
+                    {data.map(action => (
+                        <Card code={action.code} name={action.name}></Card>
+                        // <tr key={action.code}>
+                        //     <th scope="row">-</th>
+                        //     <td>{action.code}</td>
+                        //     <td>{action.name}</td>
+                        //     {/* <td><a href='/'>Ver ativo</a></td> */}
+                        //     <td>
+                        //         <button className='btn btn-primary' onClick={() => goToAction(action.code, action.name)}>Ver ativo</button>
+                        //     </td>
+                        // </tr>
+                    ))}
+                </div>
+             
             </>
         )
     } else {
@@ -66,7 +58,7 @@ export default (props) => {
             <>
             <Header></Header>
 
-            <h3>Carregando ações...</h3>
+            <h1>Carregando ativos...</h1>
             </>
         )
     }

@@ -8,3 +8,7 @@
     border-bottom: 1px solid;
     margin-bottom: 20px;
 }
+
+.navbar {
+    background-color: black!important;
+}

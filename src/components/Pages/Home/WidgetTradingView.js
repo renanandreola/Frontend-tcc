@@ -22,7 +22,7 @@ function TradingViewWidget() {
           "width": 1200,
           "height": 500,
           "locale": "br",
-          "colorTheme": "white",
+          "colorTheme": "dark",
           "autosize": false,
           "showVolume": false,
           "showMA": false,

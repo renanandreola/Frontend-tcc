@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Header from '../../layout/Header';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Card from '../../layout/Card';
 
 export default (props) => {
     const location = useLocation();
@@ -30,30 +31,33 @@ export default (props) => {
     }
 
     const goToAction = (code, name) => {
-        navigate('/action', { state: { code: code, name: name } });
+        navigate('/ticker', { state: { code: code, name: name } });
     };
 
     if (data.length > 0) {
         return (
             <>
-            <Header></Header>
-            <div className="row">
-                {data && (
-                    data.map((result) => (
-                            <div className="col-sm-6">
-                                <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">{ result.code }</h5>
-                                    <p className="card-text">{ result.name }</p>
-                                    <button className="btn btn-primary" onClick={() => goToAction(result.code, result.name)}>Ver ativo</button>
-                                </div>
-                                </div>
-                            </div>
-                    ))
-                    )}
-                    </div>
+                <Header></Header>
+
+                <h1>Ações cadastradas na B3</h1>
+            
+                <div className='listing-tickers'>
+                    {data.map(action => (
+                        <Card code={action.code} name={action.name}></Card>
+                        // <tr key={action.code}>
+                        //     <th scope="row">-</th>
+                        //     <td>{action.code}</td>
+                        //     <td>{action.name}</td>
+                        //     {/* <td><a href='/'>Ver ativo</a></td> */}
+                        //     <td>
+                        //         <button className='btn btn-primary' onClick={() => goToAction(action.code, action.name)}>Ver ativo</button>
+                        //     </td>
+                        // </tr>
+                    ))}
+                </div>
+             
             </>
-        );
+        )
     } else {
         return (
             <>
