@@ -8,7 +8,7 @@ function GraphTicker(props) {
 
 
   useEffect(() => {
-    // fetchData(props.code);
+    fetchData(props.code);
     // const intervalId = setInterval(fetchData, 4000);
     // return () => clearInterval(intervalId);
   }, []);
@@ -18,36 +18,37 @@ function GraphTicker(props) {
       let search = {
         code: code
       }
-      const response = await axios.post('http://localhost:3030/chatterbot/chart', search);
+      const response = await axios.post('http://localhost:3030/chatterbot/chart2', search);
 
-      console.log(response);
+      console.log(response.data.prices);
   
-      const responseJSON = JSON.parse(response.data.results.split('\r\n')[1]);
-
-      console.log("responseJSON", responseJSON);
-  
-      const candlestickData = responseJSON.map((rowData, index) => ({
-        x: responseJSON.index[index], // Use o valor do índice como a data
-        y: rowData.slice(0, 4), // Valores Open, High, Low e Close
-      }));
-  
-      setData(candlestickData);
+      setData(response.data.prices);
     } catch (error) {
       console.error('Erro:', error);
     }
   }
 
-  // const candlestickData = [
-  //   {
-  //     x: new Date('2023-01-01').getTime(),
-  //     y: [6600, 6800, 6200, 6500],
-  //   },
-  //   {
-  //     x: new Date('2023-01-02').getTime(),
-  //     y: [6500, 6700, 6300, 6600],
-  //   }
-  //   // Adicione mais dados de velas aqui
-  // ];
+  let dataGrafico = [];
+
+  data.map(function(obj){
+    console.log(obj);
+
+    dataGrafico.push({
+      x: new Date(`${obj.date.split('T')[0]}`).getTime(),
+      y: [obj.close, obj.high, obj.low, obj.open],
+    })
+  })
+
+  const candlestickData = [
+    {
+      x: new Date('2023-01-01').getTime(),
+      y: [6600, 6800, 6200, 6500],
+    },
+    {
+      x: new Date('2023-01-02').getTime(),
+      y: [6500, 6700, 6300, 6600],
+    }
+  ];
 
   const options = {
     chart: {
@@ -62,8 +63,8 @@ function GraphTicker(props) {
   };
 
   return (
-    <div>
-      <ReactApexChart options={options} series={[{ data: data }]} type="candlestick" height={350} />
+    <div className="chart">
+      <ReactApexChart options={options} series={[{ data: dataGrafico }]} type="candlestick" height={450} />
     </div>
   );
 }

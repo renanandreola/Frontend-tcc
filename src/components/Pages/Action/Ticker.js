@@ -1,3 +1,4 @@
+import './Ticker.css'
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import GraphTicker from './GraphTicker';
@@ -22,16 +23,18 @@ export default (props) => {
         <>
         <Header></Header>
         <HeaderTicker code={code} name={name}></HeaderTicker>
+        <div className='ticker-menu'>
+            <div className="btn-group" role="group" aria-label="Basic example">
+                <button type="button" className="btn btn-secondary">Gráfico</button>
+                <button type="button" className="btn btn-secondary">Dados financeiros</button>
+                <button type="button" className="btn btn-secondary">Análise técnica</button>
+                <button type="button" className="btn btn-secondary">Perfil da empresa</button>
+            </div>
+        </div>
         <GraphTicker code={code} name={name}></GraphTicker>
         <InfoTicker code={code} name={name}></InfoTicker>
         <StopwatchTicker code={code} name={name}></StopwatchTicker>
         <CompanyInfo code={code} name={name}></CompanyInfo>
-        
-        <div>
-            {/* <h1>Página de Ativo</h1>
-            <p>Ativo: {name}</p>
-            <p>Código: {code}</p> */}
-        </div>
         </>
 
     );
