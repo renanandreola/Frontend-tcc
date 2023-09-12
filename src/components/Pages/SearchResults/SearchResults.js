@@ -30,10 +30,6 @@ export default (props) => {
       }
     }
 
-    const goToAction = (code, name) => {
-        navigate('/ticker', { state: { code: code, name: name } });
-    };
-
     if (data.length > 0) {
         return (
             <>
