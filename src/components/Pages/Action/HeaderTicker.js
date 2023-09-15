@@ -35,7 +35,7 @@ function HeaderTicker(props) {
 
       console.log("valor do ativo: ", response);
   
-      setData(response.data.price);
+      // setData(response.data.price);
     } catch (error) {
       console.error('Erro:', error);
     }
@@ -46,9 +46,9 @@ function HeaderTicker(props) {
     <div className="tradingview-widget-container header-ticker" ref={container}>
       <div className="tradingview-widget-container__widget"></div>
     </div>
-    <div className='ticker-price'>
+    {/* <div className='ticker-price'>
       <span className='price'>COTAÇÃO: R${data}</span>
-    </div>
+    </div> */}
     </>
 
   );

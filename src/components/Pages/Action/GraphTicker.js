@@ -18,7 +18,7 @@ function GraphTicker(props) {
       let search = {
         code: code
       }
-      const response = await axios.post('http://localhost:3030/chatterbot/chart2', search);
+      const response = await axios.post('http://localhost:3030/chatterbot/chart', search);
 
       console.log(response.data.prices);
   

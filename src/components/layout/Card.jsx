@@ -10,8 +10,8 @@ export default (props) => {
     };
 
     const cardStyle = {
-        // backgroundColor: props.color || '#ffc107',
-        // borderColor: props.color || '#ffc107'
+        backgroundColor: props.color || '#143a87',
+        borderColor: props.color || '#143a87'
     }
 
     return (
