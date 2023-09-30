@@ -8,6 +8,7 @@ import InfoTicker from './InfoTicker';
 import CompanyInfo from './CompanyInfo';
 import StopwatchTicker from './StopwatchTicker';
 import GraphTickerTradingView from './GraphTickerTradingView'
+import MyCalendar from './MyCalendar';
 
 export default (props) => {
     const location = useLocation();
@@ -17,30 +18,42 @@ export default (props) => {
     const [financeVisible, setFinanceVisible] = useState(false);
     const [techVisible, setTechVisible] = useState(false);
     const [aboutVisible, setAboutVisible] = useState(false);
+    const [fullCalendar, setFullCalendar] = useState(false);
 
     const GraphVisible = () => {
         setGraphVisible(true);
         setFinanceVisible(false);
         setTechVisible(false);
         setAboutVisible(false);
+        setFullCalendar(false);
     };
     const FinanceVisible = () => {
         setGraphVisible(false);
         setFinanceVisible(true);
         setTechVisible(false);
         setAboutVisible(false);
+        setFullCalendar(false);
     };
     const TechVisible = () => {
         setGraphVisible(false);
         setFinanceVisible(false);
         setTechVisible(true);
         setAboutVisible(false);
+        setFullCalendar(false);
     };
     const AboutVisible = () => {
         setGraphVisible(false);
         setFinanceVisible(false);
         setTechVisible(false);
         setAboutVisible(true);
+        setFullCalendar(false);
+    };
+    const Calendar = () => {
+        setGraphVisible(false);
+        setFinanceVisible(false);
+        setTechVisible(false);
+        setAboutVisible(false);
+        setFullCalendar(true);
     };
 
     let code = "Código do ativo não encontrado"
@@ -73,12 +86,17 @@ export default (props) => {
                         {/* <a className="nav-link" href="">Sobre a empresa</a> */}
                         <button className="nav-link" onClick={AboutVisible}>Sobre a empresa</button>
                     </li>
+                    <li className="nav-item">
+                        <button className="nav-link" onClick={Calendar}>Calendário</button>
+                    </li>
                 </ul>
             </div>
         </nav>
-        {/* <GraphTicker code={code} name={name}></GraphTicker> */}
         {graphVisible && 
+        <>
             <GraphTickerTradingView code={code} name={name}></GraphTickerTradingView>
+            {/* <GraphTicker code={code} name={name}></GraphTicker> */}
+        </>
         }
 
         {financeVisible &&
@@ -91,6 +109,9 @@ export default (props) => {
 
         {aboutVisible &&
             <CompanyInfo code={code} name={name}></CompanyInfo>
+        }
+        {fullCalendar &&
+            <MyCalendar code={code} name={name}></MyCalendar>
         }
         </>
 
