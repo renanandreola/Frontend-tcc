@@ -37,9 +37,14 @@ function Header() {
                         <a className="nav-link" href="/action">Ativo</a>
                     </li> */}
                 </ul>
-                <div className="form-inline my-2 my-lg-0">
+                <div className="form-inline my-2 my-lg-0 mr-2">
                     <input value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="form-control mr-sm-2" type="search" placeholder="Busque pelo ativo" aria-label="Pesquisar"></input>
                     <button className="btn btn-outline-primary my-2 my-sm-0" type="" onClick={makeSearch}>Pesquisar</button>
+                </div>
+                <div>
+                    <a className='button-login' href="/login">
+                        <img width={45} src='https://cdn-icons-png.flaticon.com/512/5087/5087579.png'></img>
+                    </a>
                 </div>
             </div>
         </nav>

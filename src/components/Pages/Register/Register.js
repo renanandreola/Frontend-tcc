@@ -1,24 +1,37 @@
 import './Register.css'
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import Header from '../../layout/Header';
+import Message from "../../layout/Message";
 
 function Register() {
   const [formData, setFormData] = useState({
-    // name: '',
-    // lastname: '', 
     email: '',
-    // phone: '',
-    // cep: '',
-    // state: '',
-    // city: '', 
-    // neighborhood: '', 
-    // address: '',
-    // number: '',
-    // complement: '',
-    password: '',
-    // confirmPassword: ''
+    password: ''
   });
+
+  const [showMessageValid, setshowMessageValid] = useState(false);
+  const [showMessageInvalid, setshowMessageInvalid] = useState(false);
+
+  useEffect(() => {
+      if (showMessageValid) {
+          const timer = setTimeout(() => {
+              setshowMessageValid(false);
+          }, 5000);
+      
+          return () => clearTimeout(timer);
+      }
+  }, [showMessageValid]);
+
+  useEffect(() => {
+      if (showMessageInvalid) {
+          const timer = setTimeout(() => {
+              setshowMessageInvalid(false);
+          }, 5000);
+      
+          return () => clearTimeout(timer);
+      }
+  }, [showMessageInvalid]);
 
   const handleChange = (event) => {
     setFormData({
@@ -33,17 +46,7 @@ function Register() {
       console.log("formData", formData);
       
       var data = {
-        // name: formData.name,
-        // lastname: formData.lastname,
         email: formData.email,
-        // phone: formData.phone,
-        // cep: formData.cep,
-        // state: formData.state,
-        // city: formData.city,
-        // neighborhood: formData.neighborhood,
-        // address: formData.address,
-        // number: formData.number,
-        // complement: formData.complement,
         password: formData.password
       }
 
@@ -51,43 +54,19 @@ function Register() {
   
       console.log("response", response);
       if (response.data.status == 200) {
-        // window.location.pathname = "/"
-        alert("usuário salvo")
+        setshowMessageValid(true);
       }
-      setFormData({
-        // name: '',
-        // lastname: '', 
+      setFormData({ 
         email: '',
-        // phone: '',
-        // cep: '',
-        // state: '',
-        // city: '', 
-        // neighborhood: '', 
-        // address: '',
-        // number: '',
-        // complement: '',
         password: '',
-        // confirmPassword: ''
       })
       
     } catch (error) {
-      console.log("error::: ", error);
-      alert("erro ao salvar usuário")
+      setshowMessageInvalid(true);
 
       setFormData({
-        // name: '',
-        // lastname: '', 
         email: '',
-        // phone: '',
-        // cep: '',
-        // state: '',
-        // city: '', 
-        // neighborhood: '', 
-        // address: '',
-        // number: '',
-        // complement: '',
         password: '',
-        // confirmPassword: ''
       })
     }
   };
@@ -95,6 +74,9 @@ function Register() {
   return (
     <>
       <Header></Header>
+
+      {showMessageValid && <Message valid={true} message={'Usuário cadastrado!'} />}
+      {showMessageInvalid && <Message valid={false} message={'Erro ao realizar cadastro'} />}
       
       <h1>Crie sua conta</h1>
       <form onSubmit={createAccount}>

@@ -9,8 +9,6 @@ function GraphTicker(props) {
 
   useEffect(() => {
     fetchData(props.code);
-    // const intervalId = setInterval(fetchData, 4000);
-    // return () => clearInterval(intervalId);
   }, []);
 
   async function fetchData(code) {
@@ -64,7 +62,7 @@ function GraphTicker(props) {
 
   return (
     <div className="chart">
-      <ReactApexChart options={options} series={[{ data: dataGrafico }]} type="candlestick" height={450} />
+      <ReactApexChart options={options} series={[{ data: dataGrafico }]} height={450} />
     </div>
   );
 }

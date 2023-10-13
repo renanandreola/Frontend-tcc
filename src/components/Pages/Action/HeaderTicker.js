@@ -3,8 +3,8 @@ import "./HeaderTicker.css"
 import axios from 'axios';
 
 function HeaderTicker(props) {
-  console.log("props :: ", props);
-  const [data, setData] = useState([]);
+  // console.log("props :: ", props);
+  // const [data, setData] = useState([]);
 
   const container = useRef();
 
@@ -23,23 +23,23 @@ function HeaderTicker(props) {
       }`;
     container.current.appendChild(script);
 
-    fetchData(props.code);
+    // fetchData(props.code);
   },[]);
 
-  async function fetchData(code) {
-    try {
-      let search = {
-        code: code
-      }
-      const response = await axios.post('http://localhost:3030/chatterbot/tickerPrice', search);
+  // async function fetchData(code) {
+  //   try {
+  //     let search = {
+  //       code: code
+  //     }
+  //     const response = await axios.post('http://localhost:3030/chatterbot/tickerPrice', search);
 
-      console.log("valor do ativo: ", response);
+  //     console.log("valor do ativo: ", response);
   
-      // setData(response.data.price);
-    } catch (error) {
-      console.error('Erro:', error);
-    }
-  }
+  //     // setData(response.data.price);
+  //   } catch (error) {
+  //     console.error('Erro:', error);
+  //   }
+  // }
 
   return (
     <>

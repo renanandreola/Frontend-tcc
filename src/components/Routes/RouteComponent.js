@@ -6,6 +6,8 @@ import Register from '../Pages/Register/Register';
 import ListTickers from '../Pages/ListActions/ListTickers'
 import Ticker from '../Pages/Action/Ticker';
 import SearchResults from '../Pages/SearchResults/SearchResults';
+import Login from '../Pages/Login/Login';
+import HomeLogged from '../Pages/HomeLogged/HomeLogged';
 
 function RouteComponent() {
   return (
@@ -17,6 +19,8 @@ function RouteComponent() {
         <Route path="/tickers" element={<ListTickers />} />
         <Route path="/ticker" element={<Ticker />} />
         <Route path="/searchResults" element={<SearchResults />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<HomeLogged />} />
       </Routes>
     </BrowserRouter>
   );
