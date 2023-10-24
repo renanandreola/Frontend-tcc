@@ -8,6 +8,7 @@ import Ticker from '../Pages/Action/Ticker';
 import SearchResults from '../Pages/SearchResults/SearchResults';
 import Login from '../Pages/Login/Login';
 import HomeLogged from '../Pages/HomeLogged/HomeLogged';
+import Profile from '../Pages/Profile/Profile';
 
 function RouteComponent() {
   return (
@@ -21,6 +22,7 @@ function RouteComponent() {
         <Route path="/searchResults" element={<SearchResults />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<HomeLogged />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );

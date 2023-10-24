@@ -1,0 +1,35 @@
+.favorite-tickers {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    height: 200px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.title-favs {
+    font-weight: bold;
+    color: black;
+}
+
+.button-remove {
+    background-color: transparent;
+    border: none;
+}
+
+.img-remove {
+    width: 25px;
+}
+
+.active {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name-ticker {
+    color: black;
+}

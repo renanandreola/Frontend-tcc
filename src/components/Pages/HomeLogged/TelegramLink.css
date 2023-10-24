@@ -1,0 +1,24 @@
+.content-telegram {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-telegram {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.text-telegram {
+    color: black;
+    font-weight: bold;
+}

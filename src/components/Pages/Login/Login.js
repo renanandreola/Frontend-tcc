@@ -4,11 +4,8 @@ import Header from "../../layout/Header";
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import Message from "../../layout/Message";
-import { useNavigate } from 'react-router-dom';
 
 function Login() {
-
-    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         email: '',
@@ -65,13 +62,23 @@ function Login() {
 
             if (response.data.status == 200) {
                 setshowMessageValid(true);
+
+                // Obtenha o tempo atual em milissegundos
+                const currentTime = new Date().getTime();
+
+                // Defina a expiração para 10 minutos a partir do tempo atual
+                const tenMinutesFromNow = new Date(currentTime + 30 * 60 * 1000); // 10 minutos em milissegundos
                 
-                Cookies.set('token', response.data.token, { expires: 1 });
+                Cookies.set('token', response.data.token, { expires: tenMinutesFromNow });
+                Cookies.set('email', response.data.email, { expires: tenMinutesFromNow });
+
                 const token = Cookies.get('token');
+                const email = Cookies.get('email');
     
                 console.log(token);
+                console.log(email);
 
-                navigate('/home', { state: { token: token, email: response.data.email } });
+                window.location.pathname = "/home"
             }
 
             setFormData({ 

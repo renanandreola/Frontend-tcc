@@ -1,0 +1,8 @@
+.search-tickers {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    height: 100px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
