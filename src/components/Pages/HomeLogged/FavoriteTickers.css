@@ -2,15 +2,15 @@
     display: flex;
     flex-direction: column;
     width: 48%;
-    height: 200px;
-    background-color: #ffffff;
+    height: 300px;
+    background-color: #23242F;
     border-radius: 10px;
     padding: 10px;
 }
 
 .title-favs {
     font-weight: bold;
-    color: black;
+    color: white;
 }
 
 .button-remove {
@@ -31,5 +31,5 @@
 }
 
 .name-ticker {
-    color: black;
+    color: white;
 }

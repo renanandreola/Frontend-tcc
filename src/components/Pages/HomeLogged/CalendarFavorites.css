@@ -1,21 +1,19 @@
-.search-tickers {
+.favs-calendar-tickers {
     display: flex;
     flex-direction: column;
-    width: 48%;
-    height: 300px;
+    width: 70%;
+    height: 800px;
     background-color: #23242F;
     border-radius: 10px;
     padding: 10px;
-}
-
-.search {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+    color: white;
 }
 
 .title-favs {
     font-weight: bold;
     color: white;
+}
+
+.fc-col-header-cell-cushion {
+    color: white!important;
 }

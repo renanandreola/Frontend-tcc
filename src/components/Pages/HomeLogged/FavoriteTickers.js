@@ -72,30 +72,40 @@ function FavoriteTickers() {
         }
     }
 
-    return (
-        <>
-        {showMessageValid && <Message valid={true} message={'Ativo removido dos favoritos'} />}
-        {showMessageInvalid && <Message valid={false} message={'Erro removido dos favoritos'} />}
-
-        <div className="favorite-tickers">
+    if(data.length > 0) {
+        return (
+            <>
+            {showMessageValid && <Message valid={true} message={'Ativo removido dos favoritos'} />}
+            {showMessageInvalid && <Message valid={false} message={'Erro removido dos favoritos'} />}
+    
+            <div className="favorite-tickers">
+                <span className='title-favs'>Ativos favoritos</span>
+    
+                {data &&
+                    data.map((action) => (
+                    <div className="active" key={action.code}>
+                        <div className="name">
+                            <span className="name-ticker">{action.code} - {action.name}</span>
+                        </div>
+                        <div className="btn">
+                            <button className='button-remove' onClick={() => removeTicker(action._id)}>
+                                <img className='img-remove' src='https://cdn-icons-png.flaticon.com/512/1828/1828843.png'></img>
+                            </button>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            </>
+        );
+    } else {
+        return (
+            <div className="favorite-tickers">
             <span className='title-favs'>Ativos favoritos</span>
 
-            {data &&
-                data.map((action) => (
-                <div className="active" key={action.code}>
-                    <div className="name">
-                        <span className="name-ticker">{action.code} - {action.name}</span>
-                    </div>
-                    <div className="btn">
-                        <button className='button-remove' onClick={() => removeTicker(action._id)}>
-                            <img className='img-remove' src='https://cdn-icons-png.flaticon.com/512/1828/1828843.png'></img>
-                        </button>
-                    </div>
-                </div>
-            ))}
-        </div>
-        </>
-    );
+            <span className='title-favs mt-4'>Sem ativos favoritos</span>
+            </div>
+        )
+    }
 }
 
 export default FavoriteTickers;

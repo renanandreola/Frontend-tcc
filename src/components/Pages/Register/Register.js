@@ -6,6 +6,7 @@ import Message from "../../layout/Message";
 
 function Register() {
   const [formData, setFormData] = useState({
+    name: '',
     email: '',
     password: ''
   });
@@ -46,6 +47,7 @@ function Register() {
       console.log("formData", formData);
       
       var data = {
+        name: formData.name,
         email: formData.email,
         password: formData.password
       }
@@ -56,7 +58,8 @@ function Register() {
       if (response.data.status == 200) {
         setshowMessageValid(true);
       }
-      setFormData({ 
+      setFormData({
+        name: '', 
         email: '',
         password: '',
       })
@@ -65,6 +68,7 @@ function Register() {
       setshowMessageInvalid(true);
 
       setFormData({
+        name: '',
         email: '',
         password: '',
       })
@@ -81,6 +85,13 @@ function Register() {
       <h1>Crie sua conta</h1>
       <form onSubmit={createAccount}>
         <div className="register-infos">
+          <div className="row col-12 mt-5 d-flex justify-content-center">
+              <div className="col-6">
+                  {/* <label>E-mail</label> */}
+                  <input type="text" name="name" value={formData.name} id="name" className="form-control" placeholder='Name' onChange={handleChange}/>
+              </div>
+          </div>
+
           <div className="row col-12 mt-5 d-flex justify-content-center">
               <div className="col-6">
                   {/* <label>E-mail</label> */}

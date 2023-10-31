@@ -67,7 +67,7 @@ function Login() {
                 const currentTime = new Date().getTime();
 
                 // Defina a expiração para 10 minutos a partir do tempo atual
-                const tenMinutesFromNow = new Date(currentTime + 30 * 60 * 1000); // 10 minutos em milissegundos
+                const tenMinutesFromNow = new Date(currentTime + 50 * 60 * 1000); // 10 minutos em milissegundos
                 
                 Cookies.set('token', response.data.token, { expires: tenMinutesFromNow });
                 Cookies.set('email', response.data.email, { expires: tenMinutesFromNow });

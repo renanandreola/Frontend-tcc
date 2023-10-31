@@ -5,3 +5,11 @@
     justify-content: space-around;
     margin-top: 20px;
 }
+
+.right-content {
+    display: flex;
+    width: 26%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

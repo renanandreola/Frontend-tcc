@@ -7,6 +7,9 @@ import FavoriteTickers from "./FavoriteTickers";
 import SerachTickers from "./SerachTickers";
 import WidgetTradingView from "../Home/WidgetTradingView";
 import Actives from "../Home/Actives"
+import CalendarFavorites from "./CalendarFavorites";
+import BestPJ from "./BestPJ";
+import EventsCalendar from "./EventsCalendar";
 
 function HomeLogged() {
     const token = Cookies.get('token');
@@ -29,8 +32,18 @@ function HomeLogged() {
                 <SerachTickers></SerachTickers>
             </div>
 
-            {/* <WidgetTradingView></WidgetTradingView>
-            <Actives></Actives> */}
+            <div className="content-line-one">
+                <CalendarFavorites></CalendarFavorites>
+                <div className="right-content">
+                    <BestPJ></BestPJ>
+                    <EventsCalendar></EventsCalendar>
+                </div>
+            </div>
+
+            <div className="mt-4">
+                <WidgetTradingView></WidgetTradingView>
+            </div>
+            {/* <Actives></Actives> */}
         </>
     );
 }

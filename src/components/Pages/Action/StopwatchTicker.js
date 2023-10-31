@@ -107,13 +107,13 @@ function StopwatchTicker(props) {
         <div className="tradingview-widget-container__widget"></div>
       </div>
 
-      <div>
+      {/* <div>
         <span>De acordo com a análise de preço justo de ativos, o valor da empresa é: <strong>R${data.graham}</strong></span>
       </div>
 
       <div className='graph-apex'>
         <ReactApexChart options={options} series={[{ data: candlestickData }]} width={1200} height={450} />
-      </div>
+      </div> */}
       
     </div>
     </>
