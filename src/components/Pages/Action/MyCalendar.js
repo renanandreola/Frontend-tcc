@@ -17,7 +17,7 @@ function MyCalendar(props) {
       }
       const response = await axios.post('http://localhost:3030/chatterbot/getCalendarData', search);
 
-      console.log("calendar: ", response.data.info.dataLinks);
+      // console.log("calendar: ", response.data.info.dataLinks);
   
       setData(response.data.info.dataLinks);
     } catch (error) {

@@ -21,3 +21,11 @@
     margin-top: 10px;
     justify-content: center;
 }
+
+.name-ticker a {
+    color: #007bff!important;
+}
+
+.custom-font {
+    font-size: 15px;
+}

@@ -15,8 +15,8 @@ function HomeLogged() {
     const token = Cookies.get('token');
     const email = Cookies.get('email');
     
-    console.log(token);
-    console.log(email);
+    // console.log(token);
+    // console.log(email);
 
     if (!token || token == undefined || token == null) {
         window.location.pathname = "/"

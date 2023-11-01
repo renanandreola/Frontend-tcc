@@ -10,7 +10,7 @@ function Header() {
     const [searchTerm, setSearchTerm] = useState('');
   
     const makeSearch = () => {
-        console.log(searchTerm);
+        // console.log(searchTerm);
         navigate('/searchResults', { state: { searchTerm: searchTerm } });
     };
 
@@ -65,7 +65,7 @@ function Header() {
                 </If>
 
                 <If test={token && token != undefined && token != null}>
-                    <a className='button-login' href="/profile">
+                    <a className='button-login' href="/home">
                         <img width={45} src='https://cdn-icons-png.flaticon.com/512/5087/5087579.png'></img>
                     </a>
                 </If>

@@ -7,6 +7,7 @@ import Cookies from 'js-cookie';
 
 function CalendarFavorites() {
     const [data, setData] = useState([]);
+    const [hasData, setHasData] = useState(false);
 
     useEffect(() => {
       fetchData();
@@ -22,9 +23,15 @@ function CalendarFavorites() {
 
             const response = await axios.post('http://localhost:3030/chatterbot/getFavoritesCalendar', data);
         
-            console.log("calendar: ", response.data.linksCustom);
+            // console.log("calendar: ", response.data.linksCustom);
+
+            if (response.data.linksCustom != undefined) {
+                setHasData(true);
+                setData(response.data.linksCustom);
+            } else {
+                setHasData(false);
+            }
         
-            setData(response.data.linksCustom);
         } catch (error) {
           console.error('Erro:', error);
         }
@@ -43,34 +50,36 @@ function CalendarFavorites() {
     //     },
     ];
 
-    data.forEach(function (event) {
-        let newDateStruct = event.date.split('/');
-        let newDate = newDateStruct[2] + '-' + newDateStruct[1] + '-' + newDateStruct[0];
-        // console.log('newDate: ', newDate);
-    
-        if (event.previewLink) {
-            events.push(
-                {
-                    title: event.code + ' - Balanço trimestral',
-                    date: newDate,
-                    description: 'Demonstração financeira',
-                    url: event.previewLink
-                },
-            )
-        }
-    
-        if (event.downloadLink) {
-            events.push(
-                {
-                    title: event.code + ' - Demonstrativo de resultados',
-                    date: newDate,
-                    description: 'Download de resultados',
-                    url: event.downloadLink
-                },
-            )
-        }
-    
-    })
+    if(data && data.length > 0 && hasData) {
+        data.forEach(function (event) {
+            let newDateStruct = event.date.split('/');
+            let newDate = newDateStruct[2] + '-' + newDateStruct[1] + '-' + newDateStruct[0];
+            // console.log('newDate: ', newDate);
+        
+            if (event.previewLink) {
+                events.push(
+                    {
+                        title: event.code + ' - Balanço trimestral',
+                        date: newDate,
+                        description: 'Demonstração financeira',
+                        url: event.previewLink
+                    },
+                )
+            }
+        
+            if (event.downloadLink) {
+                events.push(
+                    {
+                        title: event.code + ' - Demonstrativo de resultados',
+                        date: newDate,
+                        description: 'Download de resultados',
+                        url: event.downloadLink
+                    },
+                )
+            }
+        
+        })
+    }
     
     const eventContent = ({ event }) => {
         return (

@@ -18,7 +18,7 @@ function GraphTicker(props) {
       }
       const response = await axios.post('http://localhost:3030/chatterbot/chart', search);
 
-      console.log(response.data.prices);
+      // console.log(response.data.prices);
   
       setData(response.data.prices);
     } catch (error) {
@@ -29,7 +29,7 @@ function GraphTicker(props) {
   let dataGrafico = [];
 
   data.map(function(obj){
-    console.log(obj);
+    // console.log(obj);
 
     dataGrafico.push({
       x: new Date(`${obj.date.split('T')[0]}`).getTime(),

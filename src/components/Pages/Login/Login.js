@@ -45,7 +45,7 @@ function Login() {
     const createLogin = async (event) => {
         event.preventDefault();
         try {
-            console.log("formData", formData);
+            // console.log("formData", formData);
             
             var data = {
                 email: formData.email,
@@ -54,7 +54,7 @@ function Login() {
     
             const response = await axios.post('http://localhost:3030/chatterbot/login', data)
       
-            console.log("response", response);
+            // console.log("response", response);
 
             if (response.data.status == 500) {
                 setshowMessageInvalid(true);
@@ -63,20 +63,21 @@ function Login() {
             if (response.data.status == 200) {
                 setshowMessageValid(true);
 
-                // Obtenha o tempo atual em milissegundos
                 const currentTime = new Date().getTime();
 
-                // Defina a expiração para 10 minutos a partir do tempo atual
-                const tenMinutesFromNow = new Date(currentTime + 50 * 60 * 1000); // 10 minutos em milissegundos
+                const tenMinutesFromNow = new Date(currentTime + 50 * 60 * 1000);
                 
                 Cookies.set('token', response.data.token, { expires: tenMinutesFromNow });
                 Cookies.set('email', response.data.email, { expires: tenMinutesFromNow });
+                Cookies.set('name', response.data.name, { expires: tenMinutesFromNow });
 
                 const token = Cookies.get('token');
                 const email = Cookies.get('email');
+                const name = Cookies.get('name');
     
-                console.log(token);
-                console.log(email);
+                // console.log(token);
+                // console.log(email);
+                // console.log(name);
 
                 window.location.pathname = "/home"
             }

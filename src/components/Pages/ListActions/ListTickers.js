@@ -18,7 +18,7 @@ export default (props) => {
     async function fetchData() {
       try {
         const response = await axios.get('http://localhost:3030/chatterbot/allActives');
-        console.log("response: ", response);
+        // console.log("response: ", response);
         setData(response.data.actives);
       } catch (error) {
         console.error('Erro:', error);

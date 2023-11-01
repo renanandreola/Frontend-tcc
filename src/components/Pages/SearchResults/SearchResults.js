@@ -9,7 +9,7 @@ export default (props) => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    console.log("location", location);
+    // console.log("location", location);
 
     const [data, setData] = useState([]);
 
@@ -23,7 +23,7 @@ export default (props) => {
             searchTerm: searchTerm
         }
         const response = await axios.post('http://localhost:3030/chatterbot/searchResults', search);
-        console.log("response: ", response);
+        // console.log("response: ", response);
         setData(response.data.results);
       } catch (error) {
         console.error('Erro:', error);
@@ -40,15 +40,6 @@ export default (props) => {
                 <div className='listing-tickers'>
                     {data.map(action => (
                         <Card code={action.code} name={action.name}></Card>
-                        // <tr key={action.code}>
-                        //     <th scope="row">-</th>
-                        //     <td>{action.code}</td>
-                        //     <td>{action.name}</td>
-                        //     {/* <td><a href='/'>Ver ativo</a></td> */}
-                        //     <td>
-                        //         <button className='btn btn-primary' onClick={() => goToAction(action.code, action.name)}>Ver ativo</button>
-                        //     </td>
-                        // </tr>
                     ))}
                 </div>
              

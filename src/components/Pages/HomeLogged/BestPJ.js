@@ -43,7 +43,7 @@ function BestPJ() {
                     <div className="active pj" key={action}>
                         <div className="name">
                             <span className="name-ticker">
-                                <strong>{action}</strong> - {actualPrices[index]} - {justPrices[index]}
+                                <strong>{action}</strong> | R${actualPrices[index]} | R${justPrices[index]}
                             </span>
                         </div>
                     </div>

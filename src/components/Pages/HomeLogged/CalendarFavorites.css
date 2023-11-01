@@ -17,3 +17,7 @@
 .fc-col-header-cell-cushion {
     color: white!important;
 }
+
+.fc-event-main {
+    overflow: hidden;
+}

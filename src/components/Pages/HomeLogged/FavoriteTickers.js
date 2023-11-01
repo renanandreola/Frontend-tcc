@@ -44,7 +44,7 @@ function FavoriteTickers() {
         
             const response = await axios.post('http://localhost:3030/chatterbot/getFavorites', data)
 
-            console.log("favs: ", response);
+            // console.log("favs: ", response);
           
             setData(response.data.favorites);
             
@@ -55,7 +55,7 @@ function FavoriteTickers() {
 
     const removeTicker = async (id) => {
  
-        console.log(id);
+        // console.log(id);
         var data = {
             id: id
         }
@@ -72,7 +72,7 @@ function FavoriteTickers() {
         }
     }
 
-    if(data.length > 0) {
+    if(data && data.length != 0) {
         return (
             <>
             {showMessageValid && <Message valid={true} message={'Ativo removido dos favoritos'} />}

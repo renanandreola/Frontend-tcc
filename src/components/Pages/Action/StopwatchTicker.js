@@ -5,7 +5,7 @@ import ReactApexChart from 'react-apexcharts';
 
 
 function StopwatchTicker(props) {
-  console.log("props :: ", props);
+  // console.log("props :: ", props);
   const container = useRef();
 
   const [data, setData] = useState([]);
@@ -39,7 +39,7 @@ function StopwatchTicker(props) {
         code: props.code
       }
       const response = await axios.post('http://localhost:3030/chatterbot/tickerInfo', search);
-      console.log("TICKER INFO: ", response);
+      // console.log("TICKER INFO: ", response);
       setData(response.data.info);
     } catch (error) {
       console.error('Erro:', error);

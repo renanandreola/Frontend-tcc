@@ -44,7 +44,7 @@ function Register() {
   const createAccount = async (event) => {
     event.preventDefault();
     try {
-      console.log("formData", formData);
+      // console.log("formData", formData);
       
       var data = {
         name: formData.name,
@@ -54,7 +54,7 @@ function Register() {
 
       const response = await axios.post('http://localhost:3030/chatterbot/client', data)
   
-      console.log("response", response);
+      // console.log("response", response);
       if (response.data.status == 200) {
         setshowMessageValid(true);
       }

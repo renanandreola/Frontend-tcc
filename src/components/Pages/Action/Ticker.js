@@ -56,7 +56,7 @@ export default (props) => {
     }, [showMessageInvalid]);
 
     const location = useLocation();
-    console.log("location", location);
+    // console.log("location", location);
 
     const [graphVisible, setGraphVisible] = useState(true);
     const [financeVisible, setFinanceVisible] = useState(false);
@@ -110,11 +110,13 @@ export default (props) => {
 
     const FavoriteTicker = async () => {
         const email = Cookies.get('email');
+        const userName = Cookies.get('name');
 
         var data = {
             code: code,
             name: name,
-            userEmail: email
+            userEmail: email,
+            userName: userName
         }
     
         const response = await axios.post('http://localhost:3030/chatterbot/favorite', data)

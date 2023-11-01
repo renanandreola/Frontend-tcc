@@ -7,7 +7,7 @@ function SerachTickers() {
     const [searchTerm, setSearchTerm] = useState('');
 
     const makeSearch = () => {
-        console.log(searchTerm);
+        // console.log(searchTerm);
         navigate('/searchResults', { state: { searchTerm: searchTerm } });
     };
 
