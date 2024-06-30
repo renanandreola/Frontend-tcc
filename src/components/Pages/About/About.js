@@ -1,5 +1,5 @@
-import React from 'react';
-import Header from '../../layout/Header';
+import React from "react";
+import Header from "../../layout/Header";
 
 function About() {
   return (
@@ -7,7 +7,7 @@ function About() {
       <Header></Header>
       <h1>About Page</h1>
     </>
-  )
+  );
 }
 
 export default About;

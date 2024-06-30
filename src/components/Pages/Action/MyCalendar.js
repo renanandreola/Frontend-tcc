@@ -1,27 +1,30 @@
-import React, { useEffect, useState, useRef, memo } from 'react';
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import axios from 'axios';
+import React, { useEffect, useState, useRef, memo } from "react";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import axios from "axios";
 
 function MyCalendar(props) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     fetchData(props.code);
-  },[]);
+  }, []);
 
   async function fetchData(code) {
     try {
       let search = {
-        code: code
-      }
-      const response = await axios.post('http://localhost:3030/chatterbot/getCalendarData', search);
+        code: code,
+      };
+      const response = await axios.post(
+        "http://localhost:3030/chatterbot/getCalendarData",
+        search
+      );
 
       // console.log("calendar: ", response.data.info.dataLinks);
-  
+
       setData(response.data.info.dataLinks);
     } catch (error) {
-      console.error('Erro:', error);
+      console.error("Erro:", error);
     }
   }
 
@@ -39,33 +42,29 @@ function MyCalendar(props) {
   ];
 
   data.forEach(function (event) {
-    let newDateStruct = event.date.split('/');
-    let newDate = newDateStruct[2] + '-' + newDateStruct[1] + '-' + newDateStruct[0];
+    let newDateStruct = event.date.split("/");
+    let newDate =
+      newDateStruct[2] + "-" + newDateStruct[1] + "-" + newDateStruct[0];
     // console.log('newDate: ', newDate);
 
     if (event.previewLink) {
-      events.push(
-        {
-          title: 'Balanço trimestral',
-          date: newDate,
-          description: 'Demonstração financeira',
-          url: event.previewLink
-        },
-      )
+      events.push({
+        title: "Balanço trimestral",
+        date: newDate,
+        description: "Demonstração financeira",
+        url: event.previewLink,
+      });
     }
 
     if (event.downloadLink) {
-      events.push(
-        {
-          title: 'Balanço trimestral',
-          date: newDate,
-          description: 'Download de resultados',
-          url: event.downloadLink
-        },
-      )
+      events.push({
+        title: "Balanço trimestral",
+        date: newDate,
+        description: "Download de resultados",
+        url: event.downloadLink,
+      });
     }
-
-  })
+  });
 
   const eventContent = ({ event }) => {
     return (
@@ -75,10 +74,10 @@ function MyCalendar(props) {
       </div>
     );
   };
-  
+
   const handleEventClick = (clickInfo) => {
     if (clickInfo.event.url) {
-      window.open(clickInfo.event.url, '_blank');
+      window.open(clickInfo.event.url, "_blank");
       clickInfo.jsEvent.preventDefault(); // Isso impede que o link atual seja redirecionado
     }
   };

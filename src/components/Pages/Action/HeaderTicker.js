@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef, memo } from 'react';
-import "./HeaderTicker.css"
-import axios from 'axios';
+import React, { useEffect, useState, useRef, memo } from "react";
+import "./HeaderTicker.css";
+import axios from "axios";
 
 function HeaderTicker(props) {
   // console.log("props :: ", props);
@@ -10,7 +10,8 @@ function HeaderTicker(props) {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-info.js";
+    script.src =
+      "https://s3.tradingview.com/external-embedding/embed-widget-symbol-info.js";
     script.type = "text/javascript";
     script.async = true;
     script.innerHTML = `
@@ -24,7 +25,7 @@ function HeaderTicker(props) {
     container.current.appendChild(script);
 
     // fetchData(props.code);
-  },[]);
+  }, []);
 
   // async function fetchData(code) {
   //   try {
@@ -34,7 +35,7 @@ function HeaderTicker(props) {
   //     const response = await axios.post('http://localhost:3030/chatterbot/tickerPrice', search);
 
   //     console.log("valor do ativo: ", response);
-  
+
   //     // setData(response.data.price);
   //   } catch (error) {
   //     console.error('Erro:', error);
@@ -43,14 +44,16 @@ function HeaderTicker(props) {
 
   return (
     <>
-    <div className="tradingview-widget-container header-ticker" ref={container}>
-      <div className="tradingview-widget-container__widget"></div>
-    </div>
-    {/* <div className='ticker-price'>
+      <div
+        className="tradingview-widget-container header-ticker"
+        ref={container}
+      >
+        <div className="tradingview-widget-container__widget"></div>
+      </div>
+      {/* <div className='ticker-price'>
       <span className='price'>COTAÇÃO: R${data}</span>
     </div> */}
     </>
-
   );
 }
 

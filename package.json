@@ -13,6 +13,7 @@
     "apexcharts": "^3.42.0",
     "axios": "^1.4.0",
     "chart.js": "^4.4.0",
+    "fullcalendar": "^6.1.11",
     "js-cookie": "^3.0.5",
     "lightweight-charts": "^4.0.1",
     "postcss-safe-parser": "^7.0.0",
