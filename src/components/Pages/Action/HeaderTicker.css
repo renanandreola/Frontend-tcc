@@ -1,21 +1,21 @@
 .js-copyright-label {
-    display: none!important;
-    visibility: hidden;
+  display: none !important;
+  visibility: hidden;
 }
 
 .header-ticker {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .ticker-price {
-    display: flex;
-    width: 100%;
-    justify-content: first baseline;
-    padding-left: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: first baseline;
+  padding-left: 50px;
 }
 
 .price {
-    font-size: 30px;
-    font-weight: bold;
-    color: #d1d4dc;
+  font-size: 30px;
+  font-weight: bold;
+  color: #d1d4dc;
 }

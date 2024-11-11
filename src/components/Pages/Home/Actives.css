@@ -1,89 +1,89 @@
-  .active {
-    display: flex;
-    border-bottom: 1px solid;
-  }
+.active {
+  display: flex;
+  border-bottom: 1px solid;
+}
 
-  .variations-name {
-    width: 65px;
-    text-align: start;
-  }
+.variations-name {
+  width: 65px;
+  text-align: start;
+}
 
-  .variations-div {
-    margin-left: 80px;
-    margin-right: 80px;
-    width: 65px;
-    text-align: start;
-  }
+.variations-div {
+  margin-left: 80px;
+  margin-right: 80px;
+  width: 65px;
+  text-align: start;
+}
 
-  .variations-price {
-    width: 65px;
-    text-align: start;
-  }
-  
-  .left-content {
-    display: flex;
-    flex-direction: column;
-    flex-direction: column;
-    width: 50%;
-    margin-right: 50px;
-  }
-  
-  .right-content {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-  }
-  
-  .initial-img {
-    border-radius: 30px;
-  }
-  
-  .start-text-title {
-    color: #17a2b8;
-    font-size: 22px;
-    font-weight: bold;
-  }
-  
-  .ups-and-downs {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-  }
-  
-  .ups {
-    display: flex;
-    /* width: 30%; */
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 10px;
-  }
-  
-  .downs {
-    display: flex;
-    /* width: 30%; */
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 10px;
-  }
-  
-  .arrows {
-    width: 25px;
-  }
-  
-  .action-cd_stock {
-    /* color: #17a2b8; */
-    font-weight: bold;
-  }
-  
-  .action-variation-more {
-    color: green;
-  }
-  
-  .action-variation-less {
-    color: red;
-  }
+.variations-price {
+  width: 65px;
+  text-align: start;
+}
+
+.left-content {
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 50px;
+}
+
+.right-content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.initial-img {
+  border-radius: 30px;
+}
+
+.start-text-title {
+  color: #17a2b8;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.ups-and-downs {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.ups {
+  display: flex;
+  /* width: 30%; */
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 10px;
+}
+
+.downs {
+  display: flex;
+  /* width: 30%; */
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+.arrows {
+  width: 25px;
+}
+
+.action-cd_stock {
+  /* color: #17a2b8; */
+  font-weight: bold;
+}
+
+.action-variation-more {
+  color: green;
+}
+
+.action-variation-less {
+  color: red;
+}

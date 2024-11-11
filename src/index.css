@@ -1,20 +1,23 @@
 body {
-    background-color: black;
-    /* font-family: Oswald; */
-    font-family: 'Trebuchet MS';
-    /* color: white; */
-    text-align: center;
-    color: #d1d4dc;
+  background-color: black;
+  /* font-family: Oswald; */
+  font-family: "Trebuchet MS";
+  /* color: white; */
+  text-align: center;
+  color: #d1d4dc;
 }
 
-h1, h2, h3 {
-    font-weight: 200;
+h1,
+h2,
+h3 {
+  font-weight: 200;
 }
 
-h2, h3 {
-    margin: 0;
+h2,
+h3 {
+  margin: 0;
 }
 
 a {
-    color: white!important;
+  color: white !important;
 }

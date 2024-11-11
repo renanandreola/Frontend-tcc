@@ -1,19 +1,19 @@
 .pj-tickers {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 395px;
-    background-color: #23242F;
-    border-radius: 10px;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 395px;
+  background-color: #23242f;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .title-favs {
-    font-weight: bold;
-    color: white;
+  font-weight: bold;
+  color: white;
 }
 
 .pj {
-    margin-top: 10px;
-    justify-content: center;
+  margin-top: 10px;
+  justify-content: center;
 }
