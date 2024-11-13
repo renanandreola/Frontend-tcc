@@ -1,6 +1,5 @@
 import "./Header.css";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import If from "./If";
@@ -10,7 +9,6 @@ function Header() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const makeSearch = () => {
-    // console.log(searchTerm);
     navigate("/searchResults", { state: { searchTerm: searchTerm } });
   };
 
@@ -73,9 +71,6 @@ function Header() {
               Criptomoedas
             </a>
           </li>
-          {/* <li className="nav-item">
-                        <a className="nav-link" href="/action">Ativo</a>
-                    </li> */}
         </ul>
         <div className="form-inline my-2 my-lg-0 mr-2">
           <input

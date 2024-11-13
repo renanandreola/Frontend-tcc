@@ -1,11 +1,8 @@
-import React, { useEffect, useState, useRef, memo } from "react";
+import React, { useEffect, useRef } from "react";
 import "./HeaderTicker.css";
-import axios from "axios";
+// import axios from "axios";
 
 function HeaderTicker(props) {
-  // console.log("props :: ", props);
-  // const [data, setData] = useState([]);
-
   const container = useRef();
 
   useEffect(() => {
@@ -33,8 +30,6 @@ function HeaderTicker(props) {
   //       code: code
   //     }
   //     const response = await axios.post('http://localhost:3030/chatterbot/tickerPrice', search);
-
-  //     console.log("valor do ativo: ", response);
 
   //     // setData(response.data.price);
   //   } catch (error) {

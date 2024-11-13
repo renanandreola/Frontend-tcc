@@ -1,7 +1,6 @@
 import "./Ticker.css";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import GraphTicker from "./GraphTicker";
 import HeaderTicker from "./HeaderTicker";
 import Header from "../../layout/Header";
 import InfoTicker from "./InfoTicker";
@@ -56,7 +55,6 @@ export default (props) => {
   }, [showMessageInvalid]);
 
   const location = useLocation();
-  // console.log("location", location);
 
   const [graphVisible, setGraphVisible] = useState(true);
   const [financeVisible, setFinanceVisible] = useState(false);
@@ -201,7 +199,6 @@ export default (props) => {
             code={code}
             name={name}
           ></GraphTickerTradingView>
-          {/* <GraphTicker code={code} name={name}></GraphTicker> */}
         </>
       )}
 

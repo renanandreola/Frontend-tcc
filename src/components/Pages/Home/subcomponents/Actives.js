@@ -16,7 +16,6 @@ function ActivesInitial() {
       const response = await axios.get(
         "http://localhost:3030/chatterbot/actives"
       );
-      // console.log("response: ", response);
       setData(response.data.response);
     } catch (error) {
       console.error("Erro:", error);

@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, memo } from "react";
+import React, { useEffect, useRef } from "react";
 import "./CompanyInfo.css";
 
 function CompanyInfo(props) {
-  // console.log("props :: ", props);
   const container = useRef();
 
   useEffect(() => {

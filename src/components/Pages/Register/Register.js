@@ -43,9 +43,8 @@ function Register() {
 
   const createAccount = async (event) => {
     event.preventDefault();
-    try {
-      // console.log("formData", formData);
 
+    try {
       var data = {
         name: formData.name,
         email: formData.email,
@@ -57,7 +56,6 @@ function Register() {
         data
       );
 
-      // console.log("response", response);
       if (response.data.status == 200) {
         setshowMessageValid(true);
       }
@@ -93,7 +91,6 @@ function Register() {
         <div className="register-infos">
           <div className="row col-12 mt-5 d-flex justify-content-center">
             <div className="col-6">
-              {/* <label>E-mail</label> */}
               <input
                 type="text"
                 name="name"
@@ -108,7 +105,6 @@ function Register() {
 
           <div className="row col-12 mt-5 d-flex justify-content-center">
             <div className="col-6">
-              {/* <label>E-mail</label> */}
               <input
                 type="email"
                 name="email"
@@ -123,7 +119,6 @@ function Register() {
 
           <div className="row col-12 mt-5 d-flex justify-content-center">
             <div className="col-6">
-              {/* <label>Senha</label> */}
               <input
                 type="password"
                 name="password"

@@ -47,8 +47,6 @@ function FavoriteTickers() {
         data
       );
 
-      // console.log("favs: ", response);
-
       setData(response.data.favorites);
     } catch (error) {
       console.error("Erro:", error);
@@ -56,7 +54,6 @@ function FavoriteTickers() {
   }
 
   const removeTicker = async (id) => {
-    // console.log(id);
     var data = {
       id: id,
     };

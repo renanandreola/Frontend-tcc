@@ -1,10 +1,9 @@
-import React, { useEffect, useState, useRef, memo } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./StopwatchTicker.css";
 import axios from "axios";
 import ReactApexChart from "react-apexcharts";
 
 function StopwatchTicker(props) {
-  // console.log("props :: ", props);
   const container = useRef();
 
   const [data, setData] = useState([]);
@@ -42,7 +41,6 @@ function StopwatchTicker(props) {
         "http://localhost:3030/chatterbot/tickerInfo",
         search
       );
-      // console.log("TICKER INFO: ", response);
       setData(response.data.info);
     } catch (error) {
       console.error("Erro:", error);
@@ -58,8 +56,6 @@ function StopwatchTicker(props) {
         "http://localhost:3030/chatterbot/tickerPrice",
         search
       );
-
-      // console.log("valor do ativo stopwatch: ", response);
 
       setPrice(response.data.price);
     } catch (error) {

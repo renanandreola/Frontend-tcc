@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, memo } from "react";
+import React, { useEffect, useRef } from "react";
 import "./InfoTicker.css";
 
 function InfoTicker(props) {
-  // console.log("props :: ", props);
   const container = useRef();
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, memo } from "react";
+import React, { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import axios from "axios";
@@ -20,32 +20,18 @@ function MyCalendar(props) {
         search
       );
 
-      // console.log("calendar: ", response.data.info.dataLinks);
-
       setData(response.data.info.dataLinks);
     } catch (error) {
       console.error("Erro:", error);
     }
   }
 
-  const events = [
-    // {
-    //   title: 'Evento 1',
-    //   date: '2023-09-25',
-    //   description: 'Esta é a descrição do Evento 1.',
-    // },
-    // {
-    //   title: 'Evento 2',
-    //   date: '2023-09-28',
-    //   description: 'Esta é a descrição do Evento 2.',
-    // },
-  ];
+  const events = [];
 
   data.forEach(function (event) {
     let newDateStruct = event.date.split("/");
     let newDate =
       newDateStruct[2] + "-" + newDateStruct[1] + "-" + newDateStruct[0];
-    // console.log('newDate: ', newDate);
 
     if (event.previewLink) {
       events.push({
@@ -78,7 +64,7 @@ function MyCalendar(props) {
   const handleEventClick = (clickInfo) => {
     if (clickInfo.event.url) {
       window.open(clickInfo.event.url, "_blank");
-      clickInfo.jsEvent.preventDefault(); // Isso impede que o link atual seja redirecionado
+      clickInfo.jsEvent.preventDefault();
     }
   };
 

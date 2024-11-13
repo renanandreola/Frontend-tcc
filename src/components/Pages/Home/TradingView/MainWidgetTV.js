@@ -19,9 +19,9 @@ function TradingViewWidget() {
             ]
           ],
           "chartOnly": false,
-          "width": 550,
-          "height": 700,
-          "locale": "en",
+          "width": "100%",
+          "height": "500",
+          "locale": "br",
           "colorTheme": "dark",
           "autosize": false,
           "showVolume": false,
@@ -31,7 +31,7 @@ function TradingViewWidget() {
           "hideSymbolLogo": false,
           "scalePosition": "right",
           "scaleMode": "Normal",
-          "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+                    "fontFamily": "Trebuchet MS, sans-serif",
           "fontSize": "10",
           "noTimeScale": false,
           "valuesTracking": "1",
@@ -62,9 +62,7 @@ function TradingViewWidget() {
           href="https://www.tradingview.com/"
           rel="noopener nofollow"
           target="_blank"
-        >
-          <span className="blue-text">Track all markets on TradingView</span>
-        </a>
+        ></a>
       </div>
     </div>
   );
