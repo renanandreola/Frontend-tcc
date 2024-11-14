@@ -1,3 +1,4 @@
+import "./MyCalendar.css";
 import React, { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
@@ -69,11 +70,13 @@ function MyCalendar(props) {
   };
 
   return (
-    <div>
+    <div className="calendar-custom">
       <FullCalendar
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
         events={events}
+        locale={"br"}
+        aspectRatio={4.5}
         eventContent={eventContent}
         eventClick={handleEventClick}
       />

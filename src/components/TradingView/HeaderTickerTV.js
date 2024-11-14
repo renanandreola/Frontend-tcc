@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./HeaderTicker.css";
-// import axios from "axios";
+import "./styles/HeaderTickerTV.css";
 
 function HeaderTicker(props) {
   const container = useRef();
@@ -20,22 +19,7 @@ function HeaderTicker(props) {
         "isTransparent": true
       }`;
     container.current.appendChild(script);
-
-    // fetchData(props.code);
   }, []);
-
-  // async function fetchData(code) {
-  //   try {
-  //     let search = {
-  //       code: code
-  //     }
-  //     const response = await axios.post('http://localhost:3030/chatterbot/tickerPrice', search);
-
-  //     // setData(response.data.price);
-  //   } catch (error) {
-  //     console.error('Erro:', error);
-  //   }
-  // }
 
   return (
     <>
@@ -45,9 +29,6 @@ function HeaderTicker(props) {
       >
         <div className="tradingview-widget-container__widget"></div>
       </div>
-      {/* <div className='ticker-price'>
-      <span className='price'>COTAÇÃO: R${data}</span>
-    </div> */}
     </>
   );
 }

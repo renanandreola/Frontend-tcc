@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, memo } from "react";
 
-function TopMarketTradingView() {
+function TopMarketTradingView(props) {
   const container = useRef();
 
   useEffect(() => {
@@ -10,7 +10,7 @@ function TopMarketTradingView() {
     script.type = "text/javascript";
     script.async = true;
     script.innerHTML = `{
-        "colorTheme": "light",
+        "colorTheme": "dark",
         "dateRange": "12M",
         "exchange": "BMFBOVESPA",
         "showChart": true,

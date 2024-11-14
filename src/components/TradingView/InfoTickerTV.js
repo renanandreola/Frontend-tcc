@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import "./InfoTicker.css";
+import "./styles/InfoTickerTV.css";
 
 function InfoTicker(props) {
   const container = useRef();
@@ -10,17 +10,16 @@ function InfoTicker(props) {
       "https://s3.tradingview.com/external-embedding/embed-widget-financials.js";
     script.type = "text/javascript";
     script.async = true;
-    script.innerHTML = `
-        {
-            "colorTheme": "dark",
-            "isTransparent": true,
-            "largeChartUrl": "",
-            "displayMode": "regular",
-            "width": "1300",
-            "height": "800",
-            "symbol": "BMFBOVESPA:${props.code}",
-            "locale": "br"
-        }`;
+    script.innerHTML = `{
+      "colorTheme": "dark",
+      "isTransparent": true,
+      "largeChartUrl": "",
+      "displayMode": "regular",
+      "width": "100%",
+      "height": "800",
+      "symbol": "BMFBOVESPA:${props.code}",
+      "locale": "br"
+    }`;
     container.current.appendChild(script);
   }, []);
 

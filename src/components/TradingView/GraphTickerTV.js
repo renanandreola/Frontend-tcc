@@ -33,7 +33,7 @@ export default function TradingViewWidget(params) {
       ) {
         new window.TradingView.widget({
           autosize: false,
-          width: 1300,
+          width: "100%",
           height: 610,
           symbol: `BMFBOVESPA:${params.code}`,
           interval: "D",

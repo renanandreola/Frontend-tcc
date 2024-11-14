@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 import TelegramLink from "./TelegramLink";
 import FavoriteTickers from "./FavoriteTickers";
 import SerachTickers from "./SerachTickers";
-import MainWidgetTradingView from "../Home/TradingView/MainWidgetTV";
+import MainWidgetTradingView from "../../TradingView/MainWidgetTV";
 import CalendarFavorites from "./CalendarFavorites";
 import BestPJ from "./BestPJ";
 import EventsCalendar from "./EventsCalendar";
